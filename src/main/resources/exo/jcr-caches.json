@@ -1,0 +1,26 @@
+{
+  "queries": [
+    {
+      "objectName": "exo:portal=portal,repository=repository,service=SessionRegistry",
+      "resultAlias": "jcr.session-registry",
+      "attributes": [
+        "Size",
+        "TimeOut"
+      ]
+    },
+    {
+      "objectName": "exo:portal=portal,repository=repository,workspace=*,service=Cache",
+      "resultAlias": "jcr.repository.%workspace%.cache",
+      "attributes": [
+        "Size"
+      ]
+    },
+    {
+      "objectName": "exo:portal=portal,repository=repository,workspace=*,service=lockmanager",
+      "resultAlias": "jcr.repository.%workspace%.lockmanager",
+      "attributes": [
+        "NumLocks"
+      ]
+    }
+  ]
+}
