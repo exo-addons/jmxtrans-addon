@@ -5,13 +5,16 @@
   <display-name>JMXTrans Add-on</display-name>
 
   <context-param>
+    <param-name>jmxtrans.system.config</param-name>
+    <param-value>exo.jmxtrans.system.config</param-value>
+  </context-param>
+
+  <context-param>
     <param-name>jmxtrans.config</param-name>
     <param-value>
-      classpath:jmxtrans.json
+      classpath:jmxtrans-exo.json
+      classpath:exo/app-caches.json
       classpath:exo/jcr-caches.json
-      classpath:org/jmxtrans/embedded/config/jmxtrans-internals.json
-      classpath:org/jmxtrans/embedded/config/jvm-sun-hotspot.json
-      classpath:org/jmxtrans/embedded/config/tomcat-7.json
     </param-value>
   </context-param>
 

@@ -1,0 +1,95 @@
+{
+  "queries": [
+    {
+      "objectName": "java.lang:type=Memory",
+      "resultAlias": "jvm.memory",
+      "attributes": [
+        {
+          "name": "HeapMemoryUsage",
+          "keys": ["committed", "used"]
+        },
+        {
+          "name": "NonHeapMemoryUsage",
+          "keys": ["committed", "used"]
+        }
+      ]
+    },
+    {
+      "objectName": "java.lang:type=MemoryPool,name=*",
+      "resultAlias": "jvm.memory-pools.%name%",
+      "attributes": [
+        {
+          "name": "Usage",
+          "keys": ["committed", "used"]
+        }
+      ]
+    },
+    {
+      "objectName": "java.lang:type=Runtime",
+      "resultAlias": "jvm.runtime",
+      "attributes": [
+        {
+          "name": "Uptime",
+          "resultAlias": "uptime"
+        }
+      ]
+
+    },
+    {
+      "objectName": "java.lang:type=GarbageCollector,name=*",
+      "resultAlias": "jvm.gc.%name%",
+      "attributes": [
+        {
+          "name": "CollectionCount",
+          "resultAlias": "collection-count"
+        },
+        {
+          "name": "CollectionTime",
+          "resultAlias": "collection-time"
+        }
+      ]
+    },
+    {
+      "objectName": "java.lang:type=Threading",
+      "resultAlias": "jvm.thread",
+      "attributes": [
+        {
+          "name": "ThreadCount",
+          "resultAlias": "thread-count"
+        }
+      ]
+
+    },
+    {
+      "objectName": "java.lang:type=OperatingSystem",
+      "resultAlias": "jvm.os",
+      "attributes": [
+        {
+          "name": "CommittedVirtualMemorySize",
+          "resultAlias": "virtual-memory-committed"
+        },
+        {
+          "name": "FreePhysicalMemorySize",
+          "resultAlias": "free-physical-memory"
+        },
+        {
+          "name": "FreeSwapSpaceSize",
+          "resultAlias": "free-swap-memory"
+        },
+        {
+          "name": "OpenFileDescriptorCount",
+          "resultAlias": "open-file-descriptor-count"
+        },
+        {
+          "name": "ProcessCpuTime",
+          "resultAlias": "process-cpu-time"
+        },
+        {
+          "name": "SystemLoadAverage",
+          "resultAlias": "system-load-average"
+        }
+      ]
+
+    }
+  ]
+}

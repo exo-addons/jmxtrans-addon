@@ -33,6 +33,10 @@
         <include>*:*:jar</include>
       </includes>
       <excludes>
+        <exclude>commons-io:commons-io:jar</exclude>
+        <exclude>commons-pool:commons-pool:jar</exclude>
+        <exclude>javax.servlet:javax.servlet-api:jar</exclude>
+        <exclude>javax.annotation:jsr250-api:jar</exclude>
         <exclude>org.slf4j:*:jar</exclude>
       </excludes>
       <scope>provided</scope>

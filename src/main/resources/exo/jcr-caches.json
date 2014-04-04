@@ -1,25 +1,113 @@
 {
   "queries": [
     {
-      "objectName": "exo:portal=portal,repository=repository,service=SessionRegistry",
-      "resultAlias": "jcr.session-registry",
+      "objectName": "exo:portal=portal,repository=*,service=SessionRegistry",
+      "resultAlias": "jcr.%repository%.session-registry",
       "attributes": [
-        "Size",
-        "TimeOut"
+        {
+          "name": "Size",
+          "resultAlias": "size"
+        },
+        {
+          "name": "TimeOut",
+          "resultAlias": "timeout"
+        }
       ]
     },
     {
-      "objectName": "exo:portal=portal,repository=repository,workspace=*,service=Cache",
-      "resultAlias": "jcr.repository.%workspace%.cache",
+      "objectName": "exo:portal=portal,repository=*,workspace=*,service=Cache",
+      "resultAlias": "jcr.%repository%.workspaces.%workspace%",
       "attributes": [
-        "Size"
+        {
+          "name": "Size",
+          "resultAlias": "cache-size"
+        }
       ]
     },
     {
-      "objectName": "exo:portal=portal,repository=repository,workspace=*,service=lockmanager",
-      "resultAlias": "jcr.repository.%workspace%.lockmanager",
+      "objectName": "exo:portal=portal,repository=*,workspace=*,service=lockmanager",
+      "resultAlias": "jcr.%repository%.workspaces.%workspace%",
       "attributes": [
-        "NumLocks"
+        {
+          "name": "NumLocks",
+          "resultAlias": "locks-size"
+        }
+      ]
+    },
+    {
+      "objectName": "exo:portal=portal,repository=*,workspace=system,cache-type=JCR_CACHE,jmx-resource=CacheMgmtInterceptor",
+      "resultAlias": "jcr.%repository%.jcr_cache",
+      "attributes": [
+        {
+          "name": "Hits",
+          "resultAlias": "cache-hits"
+        },
+        {
+          "name": "HitMissRatio",
+          "resultAlias": "hit-miss-ratio"
+        },
+        {
+          "name": "Misses",
+          "resultAlias": "cache-misses"
+        },
+        {
+          "name": "ReadWriteRatio",
+          "resultAlias": "read-write-ratio"
+        },
+        {
+          "name": "NumberOfNodes",
+          "resultAlias": "nodes-number"
+        },
+        {
+          "name": "NumberOfAttributes",
+          "resultAlias": "attributes-number"
+        },
+        {
+          "name": "Stores",
+          "resultAlias": "put-number"
+        },
+        {
+          "name": "Evictions",
+          "resultAlias": "evictions-number"
+        }
+      ]
+    },
+    {
+      "objectName": "exo:portal=portal,repository=*,workspace=system,cache-type=LOCK_CACHE,jmx-resource=CacheMgmtInterceptor",
+      "resultAlias": "jcr.%repository%.lock_cache",
+      "attributes": [
+        {
+          "name": "Hits",
+          "resultAlias": "cache-hits"
+        },
+        {
+          "name": "HitMissRatio",
+          "resultAlias": "hit-miss-ratio"
+        },
+        {
+          "name": "Misses",
+          "resultAlias": "cache-misses"
+        },
+        {
+          "name": "ReadWriteRatio",
+          "resultAlias": "read-write-ratio"
+        },
+        {
+          "name": "NumberOfNodes",
+          "resultAlias": "nodes-number"
+        },
+        {
+          "name": "NumberOfAttributes",
+          "resultAlias": "attributes-number"
+        },
+        {
+          "name": "Stores",
+          "resultAlias": "put-number"
+        },
+        {
+          "name": "Evictions",
+          "resultAlias": "evictions-number"
+        }
       ]
     }
   ]

@@ -1,0 +1,39 @@
+{
+  "queries": [
+    {
+      "objectName": "org.jmxtrans.embedded:name=*,type=EmbeddedJmxTrans,path=*",
+      "resultAlias": "jmxtrans.%name%.%path%",
+      "attributes": [
+        {
+          "name": "CollectedMetricsCount",
+          "resultAlias": "collected-metrics-count"
+        },
+        {
+          "name": "CollectionCount",
+          "resultAlias": "collection-count"
+        },
+        {
+          "name": "CollectionDurationInNanos",
+          "resultAlias": "collection-duration-in-nanos"
+        },
+        {
+          "name": "ExportCount",
+          "resultAlias": "export-count"
+        },
+        {
+          "name": "ExportDurationInNanos",
+          "resultAlias": "export-duration-in-nanos"
+        },
+        {
+          "name": "ExportedMetricsCount",
+          "resultAlias": "exported-metrics-count"
+        },
+        {
+          "name": "DiscardedResultsCount",
+          "resultAlias": "discarded-metrics-count"
+        }
+      ]
+
+    }
+  ]
+}
