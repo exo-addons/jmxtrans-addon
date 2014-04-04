@@ -1,26 +1,38 @@
 {
-  "queries": [
-    {
-      "objectName": "exo:portal=portal,repository=repository,service=SessionRegistry",
-      "resultAlias": "jcr.session-registry",
-      "attributes": [
-        "Size",
-        "TimeOut"
-      ]
-    },
-    {
-      "objectName": "exo:portal=portal,repository=repository,workspace=*,service=Cache",
-      "resultAlias": "jcr.repository.%workspace%.cache",
-      "attributes": [
-        "Size"
-      ]
-    },
-    {
-      "objectName": "exo:portal=portal,repository=repository,workspace=*,service=lockmanager",
-      "resultAlias": "jcr.repository.%workspace%.lockmanager",
-      "attributes": [
-        "NumLocks"
-      ]
-    }
-  ]
+    "queries": [
+        {
+            "objectName": "exo:portal=portal,repository=repository,service=SessionRegistry",
+            "resultAlias": "jcr.session-registry",
+            "attributes": [
+                {
+                    "name": "Size",
+                    "resultAlias": "size"
+                },
+                {
+                    "name": "TimeOut",
+                    "resultAlias": "timeout"
+                }
+            ]
+        },
+        {
+            "objectName": "exo:portal=portal,repository=repository,workspace=*,service=Cache",
+            "resultAlias": "jcr.repository.%workspace%",
+            "attributes": [
+                {
+                    "name": "Size",
+                    "resultAlias": "cache-size"
+                }
+            ]
+        },
+        {
+            "objectName": "exo:portal=portal,repository=repository,workspace=*,service=lockmanager",
+            "resultAlias": "jcr.repository.%workspace%.lockmanager",
+            "attributes": [
+                {
+                    "name": "NumLocks",
+                    "resultAlias": "locks-size"
+                }
+            ]
+        }
+    ]
 }

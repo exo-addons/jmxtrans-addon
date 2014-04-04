@@ -1,13 +1,19 @@
 {
-  "outputWriters": [
-    {
-      "@class": "org.jmxtrans.embedded.output.GraphiteWriter",
-      "settings": {
-        "host": "${graphite.host:localhost}",
-        "port": "${graphite.port:2003}",
-        "namePrefix": "${graphite.namePrefix:servers.#hostname#.}",
-        "enabled": "${graphite.enabled:true}"
-      }
-    }
-  ]
+    "outputWriters": [
+        {
+            "@class": "org.jmxtrans.embedded.output.ConsoleWriter"
+        },
+        {
+            "@class": "org.jmxtrans.embedded.output.GraphiteWriter",
+            "settings": {
+                "host": "${graphite.host:localhost}",
+                "port": "${graphite.port:2003}",
+                "namePrefix": "${graphite.namePrefix:servers.#hostname#.}",
+                "enabled": "${graphite.enabled:true}"
+            }
+        }
+    ],
+    "queryIntervalInSeconds": 15,
+    "numQueryThreads": 2,
+    "exportIntervalInSeconds": 30
 }

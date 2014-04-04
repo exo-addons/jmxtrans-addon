@@ -1,0 +1,30 @@
+{
+    "queries": [
+        {
+            "objectName": "exo:portal=portal,service=cache,name=*",
+            "resultAlias": "exo.caches.%name%",
+            "attributes": [
+                {
+                    "name": "Capacity",
+                    "resultAlias": "capacity"
+                },
+                {
+                    "name": "TimeToLive",
+                    "resultAlias": "ttl"
+                },
+                {
+                    "name": "Size",
+                    "resultAlias": "size"
+                },
+                {
+                    "name": "HitCount",
+                    "resultAlias": "hits"
+                },
+                {
+                    "name": "MissCount",
+                    "resultAlias": "misses"
+                }
+            ]
+        }
+    ]
+}
