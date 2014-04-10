@@ -1,9 +1,6 @@
 {
   "outputWriters": [
     {
-      "@class": "org.jmxtrans.embedded.output.ConsoleWriter"
-    },
-    {
       "@class": "org.jmxtrans.embedded.output.GraphiteWriter",
       "settings": {
         "host": "${graphite.host:localhost}",
