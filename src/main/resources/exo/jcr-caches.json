@@ -1,38 +1,114 @@
 {
-    "queries": [
+  "queries": [
+    {
+      "objectName": "exo:portal=portal,repository=*,service=SessionRegistry",
+      "resultAlias": "jcr.%repository%.session-registry",
+      "attributes": [
         {
-            "objectName": "exo:portal=portal,repository=repository,service=SessionRegistry",
-            "resultAlias": "jcr.session-registry",
-            "attributes": [
-                {
-                    "name": "Size",
-                    "resultAlias": "size"
-                },
-                {
-                    "name": "TimeOut",
-                    "resultAlias": "timeout"
-                }
-            ]
+          "name": "Size",
+          "resultAlias": "size"
         },
         {
-            "objectName": "exo:portal=portal,repository=repository,workspace=*,service=Cache",
-            "resultAlias": "jcr.repository.%workspace%",
-            "attributes": [
-                {
-                    "name": "Size",
-                    "resultAlias": "cache-size"
-                }
-            ]
-        },
-        {
-            "objectName": "exo:portal=portal,repository=repository,workspace=*,service=lockmanager",
-            "resultAlias": "jcr.repository.%workspace%.lockmanager",
-            "attributes": [
-                {
-                    "name": "NumLocks",
-                    "resultAlias": "locks-size"
-                }
-            ]
+          "name": "TimeOut",
+          "resultAlias": "timeout"
         }
-    ]
+      ]
+    },
+    {
+      "objectName": "exo:portal=portal,repository=*,workspace=*,service=Cache",
+      "resultAlias": "jcr.%repository%.%workspace%",
+      "attributes": [
+        {
+          "name": "Size",
+          "resultAlias": "cache-size"
+        }
+      ]
+    },
+    {
+      "objectName": "exo:portal=portal,repository=*,workspace=*,service=lockmanager",
+      "resultAlias": "jcr.%repository%.%workspace%",
+      "attributes": [
+        {
+          "name": "NumLocks",
+          "resultAlias": "locks-size"
+        }
+      ]
+    },
+    {
+      "objectName": "exo:portal=portal,repository=*,workspace=*,cache-type=JCR_CACHE,jmx-resource=CacheMgmtInterceptor",
+      "resultAlias": "jcr.%repository%.%workspace%.jcr_cache",
+      "attributes": [
+        {
+          "name": "Hits",
+          "resultAlias": "cache-hits"
+        },
+        {
+          "name": "HitMissRatio",
+          "resultAlias": "hit-miss-ratio"
+        },
+        {
+          "name": "Misses",
+          "resultAlias": "cache-misses"
+        },
+        {
+          "name": "ReadWriteRatio",
+          "resultAlias": "read-write-ratio"
+        },
+        {
+          "name": "NumberOfNodes",
+          "resultAlias": "nodes-number"
+        },
+        {
+          "name": "NumberOfAttributes",
+          "resultAlias": "attributes-number"
+        },
+        {
+          "name": "Stores",
+          "resultAlias": "put-number"
+        },
+        {
+          "name": "Evictions",
+          "resultAlias": "evictions-number"
+        }
+      ]
+    },
+    {
+      "objectName": "exo:portal=portal,repository=*,workspace=*,cache-type=LOCK_CACHE,jmx-resource=CacheMgmtInterceptor",
+      "resultAlias": "jcr.%repository%.%workspace%.lock_cache",
+      "attributes": [
+        {
+          "name": "Hits",
+          "resultAlias": "cache-hits"
+        },
+        {
+          "name": "HitMissRatio",
+          "resultAlias": "hit-miss-ratio"
+        },
+        {
+          "name": "Misses",
+          "resultAlias": "cache-misses"
+        },
+        {
+          "name": "ReadWriteRatio",
+          "resultAlias": "read-write-ratio"
+        },
+        {
+          "name": "NumberOfNodes",
+          "resultAlias": "nodes-number"
+        },
+        {
+          "name": "NumberOfAttributes",
+          "resultAlias": "attributes-number"
+        },
+        {
+          "name": "Stores",
+          "resultAlias": "put-number"
+        },
+        {
+          "name": "Evictions",
+          "resultAlias": "evictions-number"
+        }
+      ]
+    }
+  ]
 }
