@@ -124,27 +124,27 @@
   <build>
     <!-- This name is used to bundle the extension -->
     <finalName>jmxtrans-addon</finalName>
-    <!--<plugins>-->
-    <!--<plugin>-->
-    <!--<groupId>org.apache.maven.plugins</groupId>-->
-    <!--<artifactId>maven-assembly-plugin</artifactId>-->
-    <!--<executions>-->
-    <!--<execution>-->
-    <!--<id>package-extension</id>-->
-    <!--<phase>package</phase>-->
-    <!--<goals>-->
-    <!--<goal>single</goal>-->
-    <!--</goals>-->
-    <!--<configuration>-->
-    <!--<appendAssemblyId>false</appendAssemblyId>-->
-    <!--<descriptors>-->
-    <!--<descriptor>src/main/assemblies/addon.xml</descriptor>-->
-    <!--</descriptors>-->
-    <!--</configuration>-->
-    <!--</execution>-->
-    <!--</executions>-->
-    <!--</plugin>-->
-    <!--</plugins>-->
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>package-extension</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <configuration>
+              <appendAssemblyId>false</appendAssemblyId>
+              <descriptors>
+                <descriptor>src/main/assemblies/addon.xml</descriptor>
+              </descriptors>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
   </build>
   <profiles>
     <profile>
