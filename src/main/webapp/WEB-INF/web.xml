@@ -7,7 +7,7 @@
   <context-param>
     <param-name>jmxtrans.config</param-name>
     <param-value>
-      classpath:jmxtrans.json
+      classpath:jmxtrans-exo.json
       classpath:exo/app-caches.json
       classpath:exo/jcr-caches.json
     </param-value>

@@ -1,0 +1,30 @@
+{
+  "outputWriters": [
+    {
+      "@class": "org.jmxtrans.embedded.output.ConsoleWriter"
+    },
+    {
+      "@class": "org.jmxtrans.embedded.output.GraphiteWriter",
+      "settings": {
+        "host": "${graphite.host:localhost}",
+        "port": "${graphite.port:2003}",
+        "namePrefix": "${graphite.namePrefix:servers.#escaped_hostname#.}",
+        "enabled": "${graphite.enabled:true}"
+      }
+    },
+    {
+      "@class": "org.jmxtrans.embedded.output.GraphitePickleWriter",
+      "settings": {
+        "host": "${graphite.host:localhost}",
+        "port": "${graphite.port:2004}",
+        "namePrefix": "${graphite.namePrefix:servers.#escaped_hostname#.}",
+        "enabled": "${graphite.pickle.enabled:false}"
+      }
+    }
+  ],
+  "queryIntervalInSeconds": "${graphite.queryIntervalInSeconds:15}",
+  "numQueryThreads": "${graphite.queryThreads:10}",
+  "exportIntervalInSeconds": "${graphite.exportIntervalInSeconds:30}",
+  "exportBatchSize":"${graphite.exportBatchSize:50}",
+  "numExportThreads":"${graphite.numExportThreads:2}"
+}
