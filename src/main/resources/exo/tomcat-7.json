@@ -1,0 +1,101 @@
+{
+  "queries": [
+    {
+      "objectName": "Catalina:type=ThreadPool,name=*",
+      "resultAlias": "tomcat.thread-pool.%name%",
+      "attributes": [
+        {
+          "name": "currentThreadCount",
+          "resultAlias": "thread-count"
+        },
+        {
+          "name": "currentThreadsBusy",
+          "resultAlias": "thread-busy"
+        }
+      ]
+
+    },
+    {
+      "objectName": "Catalina:type=Manager,context=*,host=*",
+      "resultAlias": "tomcat.manager.%host%.%context%",
+      "attributes": [
+        {
+          "name": "activeSessions",
+          "resultAlias": "active-sessions"
+        }
+      ]
+    },
+    {
+      "objectName": "Catalina:type=GlobalRequestProcessor,name=*",
+      "resultAlias": "tomcat.global-request-processor.%name%",
+      "attributes": [
+        {
+          "name": "bytesReceived",
+          "resultAlias": "bytes-received"
+        },
+        {
+          "name": "bytesSent",
+          "resultAlias": "bytes-sent"
+        },
+        {
+          "name": "errorCount",
+          "resultAlias": "error-count"
+        },
+        {
+          "name": "processingTime",
+          "resultAlias": "processing-time"
+        },
+        {
+          "name": "requestCount",
+          "resultAlias": "request-count"
+        }
+      ]
+    },
+    {
+      "objectName": "Catalina:type=DataSource,context=*,host=*,class=javax.sql.DataSource,name=*",
+      "resultAlias": "tomcat.data-source.%host%.%context%.%name%",
+      "attributes": [
+        {
+          "name": "numActive",
+          "resultAlias": "num-active"
+        },
+        {
+          "name": "numIdle",
+          "resultAlias": "num-idle"
+        }
+      ]
+    },
+    {
+      "objectName": "Catalina:type=DataSource,class=javax.sql.DataSource,name=*",
+      "resultAlias": "tomcat.data-source.%name%",
+      "attributes": [
+        {
+          "name": "numActive",
+          "resultAlias": "num-active"
+        },
+        {
+          "name": "numIdle",
+          "resultAlias": "num-idle"
+        }
+      ]
+    },
+    {
+      "objectName": "Catalina:j2eeType=Servlet,name=*,WebModule=*,J2EEApplication=none,J2EEServer=none",
+      "resultAlias": "tomcat.servlet.%WebModule%.%name%",
+      "attributes": [
+        {
+          "name": "errorCount",
+          "resultAlias": "error-count"
+        },
+        {
+          "name": "requestCount",
+          "resultAlias": "request-count"
+        },
+        {
+          "name": "processingTime",
+          "resultAlias": "processing-time"
+        }
+      ]
+    }
+  ]
+}
