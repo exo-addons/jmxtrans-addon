@@ -16,7 +16,7 @@
     },
     {
       "objectName": "exo:portal=portal,repository=*,workspace=*,service=Cache",
-      "resultAlias": "jcr.%repository%.%workspace%",
+      "resultAlias": "jcr.%repository%.workspaces.%workspace%",
       "attributes": [
         {
           "name": "Size",
@@ -26,7 +26,7 @@
     },
     {
       "objectName": "exo:portal=portal,repository=*,workspace=*,service=lockmanager",
-      "resultAlias": "jcr.%repository%.%workspace%",
+      "resultAlias": "jcr.%repository%.workspaces.%workspace%",
       "attributes": [
         {
           "name": "NumLocks",
@@ -35,8 +35,8 @@
       ]
     },
     {
-      "objectName": "exo:portal=portal,repository=*,workspace=*,cache-type=JCR_CACHE,jmx-resource=CacheMgmtInterceptor",
-      "resultAlias": "jcr.%repository%.%workspace%.jcr_cache",
+      "objectName": "exo:portal=portal,repository=*,workspace=system,cache-type=JCR_CACHE,jmx-resource=CacheMgmtInterceptor",
+      "resultAlias": "jcr.%repository%.jcr_cache",
       "attributes": [
         {
           "name": "Hits",
@@ -73,8 +73,8 @@
       ]
     },
     {
-      "objectName": "exo:portal=portal,repository=*,workspace=*,cache-type=LOCK_CACHE,jmx-resource=CacheMgmtInterceptor",
-      "resultAlias": "jcr.%repository%.%workspace%.lock_cache",
+      "objectName": "exo:portal=portal,repository=*,workspace=system,cache-type=LOCK_CACHE,jmx-resource=CacheMgmtInterceptor",
+      "resultAlias": "jcr.%repository%.lock_cache",
       "attributes": [
         {
           "name": "Hits",

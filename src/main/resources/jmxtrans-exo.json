@@ -19,9 +19,9 @@
       }
     }
   ],
-  "queryIntervalInSeconds": "${graphite.queryIntervalInSeconds:15}",
-  "numQueryThreads": "${graphite.queryThreads:10}",
-  "exportIntervalInSeconds": "${graphite.exportIntervalInSeconds:30}",
-  "exportBatchSize":"${graphite.exportBatchSize:50}",
-  "numExportThreads":"${graphite.numExportThreads:2}"
+  "queryIntervalInSeconds": "${graphite.queryIntervalInSeconds:30}",
+  "numQueryThreads": "${graphite.queryThreads:15}",
+  "exportIntervalInSeconds": "${graphite.exportIntervalInSeconds:5}",
+  "exportBatchSize": "${graphite.exportBatchSize:50}",
+  "numExportThreads": "${graphite.numExportThreads:5}"
 }

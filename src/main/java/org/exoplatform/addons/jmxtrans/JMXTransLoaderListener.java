@@ -65,6 +65,8 @@ public class JMXTransLoaderListener implements ServletContextListener {
       }
     }
 
+    sce.getServletContext().log("Embedded JMXTrans configuration : "+configuration);
+
     List<String> configurationUrls = StringUtils2.delimitedStringToList(configuration);
     embeddedJmxTrans = configurationParser.newEmbeddedJmxTrans(configurationUrls);
     String on = "org.jmxtrans.embedded:type=EmbeddedJmxTrans,name=jmxtrans,path=" + sce.getServletContext().getContextPath();
@@ -111,7 +113,7 @@ public class JMXTransLoaderListener implements ServletContextListener {
       return null;
     }
 
-    return "file:///" + prop;
+    return prop;
   }
 
   private String configureFromWebXmlParam(ServletContextEvent sce) {
