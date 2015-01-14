@@ -45,7 +45,7 @@
     <dependencySet>
       <outputDirectory>/${project.build.finalName}/webapps</outputDirectory>
       <includes>
-        <include>*:*:war</include>
+        <include>*:jmxtrans-addon-webapp:war</include>
       </includes>
       <scope>provided</scope>
       <outputFileNameMapping>${artifact.artifactId}-${artifact.baseVersion}.${artifact.extension}

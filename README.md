@@ -7,7 +7,7 @@ This add-on integrate [Embedded JMXTrans](https://github.com/jmxtrans/embedded-j
 
 # Prerequisites
 
-* a eXo Platform 4+ installation ([Community](http://community.exoplatform.com/portal/intranet/downloads), [Express or Enterprise](http://www.exoplatform.com/company/en/products/editions))
+* a eXo Platform 4.1+ installation ([Community](http://community.exoplatform.com/portal/intranet/downloads), [Express or Enterprise](http://www.exoplatform.com/company/en/products/editions))
 * a running Graphite server (if you don't want to deal with Graphite installation, you can just try with [Hosted Graphite](http://www.hostedgraphite.com/))
 
 # Installation with eXo Platform add-on manager
@@ -30,17 +30,17 @@ This add-on integrate [Embedded JMXTrans](https://github.com/jmxtrans/embedded-j
 
 You must at least fill `-Dgraphite.host=localhost` with the right graphite server url but you can also uncomment and change whatever parameter depending of your needs.
 
-2- Install the [eXo Platform add-on manager](http://blog.exoplatform.com/en/2013/12/20/boost-platform-new-add-ons-manager) in your existing eXo Platform 4.x if it is not already done (prior to eXo Platform 4.1 RC1 only):
-
-    cd <EXOPLATFORM_HOME>
-    curl -L -o addons-manager-1.0.0-alpha-4.zip http://sourceforge.net/projects/exo/files/Addons/Add-ons%20Manager/addons-manager-1.0.0-alpha-4.zip/download
-    unzip addons-manager-1.0.0-alpha-4.zip
+2- Install the add-on
 
 Then install the jmxtrans-addon with the following command
 
-    ./addon.sh install jmxtrans-addon:1.0.0-SNAPSHOT
+    # For Tomcat
+    ./addon install jmxtrans:1.0.0-SNAPSHOT
 
-3- Start your eXo Platform 4 and your metrics should arrive in your Graphite server ...
+    # For JBoss
+    ./addon install jmxtrans-jboss:1.0.0-SNAPSHOT
+
+3- Start your eXo Platform server and your metrics should arrive in your Graphite server ...
 
 
 # If you want more metrics

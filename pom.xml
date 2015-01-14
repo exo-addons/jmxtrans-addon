@@ -29,7 +29,7 @@
   <groupId>org.exoplatform.addons.jmxtrans</groupId>
   <artifactId>jmxtrans-addon</artifactId>
   <version>1.0.0-SNAPSHOT</version>
-  <packaging>war</packaging>
+  <packaging>pom</packaging>
   <name>JMXTrans integration</name>
   <description>Integrate eXo Platform with JMXTrans for monitoring</description>
   <developers>
@@ -48,10 +48,17 @@
     <tag>HEAD</tag>
     <url>https://github.com/exo-addons/jmxtrans-addon</url>
   </scm>
+  <modules>
+    <module>lib</module>
+    <module>webapp</module>
+    <module>webapp-jboss</module>
+    <module>pkg</module>
+    <module>pkg-jboss</module>
+  </modules>
   <properties>
     <!-- 3rd party libraries versions -->
-    <exoplatform.version>4.0.6</exoplatform.version>
-    <jmxtrans-embeded.version>1.0.9</jmxtrans-embeded.version>
+    <exoplatform.version>4.1.0</exoplatform.version>
+    <jmxtrans-embeded.version>1.0.11</jmxtrans-embeded.version>
     <jython.version>2.5.3</jython.version>
     <!-- **************************************** -->
     <!-- Jenkins Settings -->
@@ -83,18 +90,35 @@
         <artifactId>jython</artifactId>
         <version>${jython.version}</version>
       </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>jmxtrans-addon-lib</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>jmxtrans-addon-webapp</artifactId>
+        <version>${project.version}</version>
+        <type>war</type>
+      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>jmxtrans-addon-webapp-jboss</artifactId>
+        <version>${project.version}</version>
+        <type>war</type>
+      </dependency>
     </dependencies>
   </dependencyManagement>
   <dependencies>
     <dependency>
       <groupId>commons-io</groupId>
       <artifactId>commons-io</artifactId>
-      <scope>provided</scope>
+      <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>commons-pool</groupId>
       <artifactId>commons-pool</artifactId>
-      <scope>provided</scope>
+      <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>javax.annotation</groupId>
@@ -120,31 +144,6 @@
       <scope>provided</scope>
     </dependency>
   </dependencies>
-  <build>
-    <!-- This name is used to bundle the extension -->
-    <finalName>jmxtrans-addon</finalName>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-assembly-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>package-extension</id>
-            <phase>package</phase>
-            <goals>
-              <goal>single</goal>
-            </goals>
-            <configuration>
-              <appendAssemblyId>false</appendAssemblyId>
-              <descriptors>
-                <descriptor>src/main/assemblies/addon.xml</descriptor>
-              </descriptors>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
-  </build>
   <profiles>
     <profile>
       <id>project-repositories</id>
